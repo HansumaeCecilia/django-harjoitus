@@ -5,4 +5,4 @@ from .models import Postaus
 # Luo model-admin
 @admin.register(Postaus)
 class PostausAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["otsikko", "luotu"]
