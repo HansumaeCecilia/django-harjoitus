@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Postaus
+
+# Luo model-admin
+@admin.register(Postaus)
+class PostausAdmin(admin.ModelAdmin):
+    pass
