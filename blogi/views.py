@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from .models import Postaus
 
 # Create your views here.
@@ -16,5 +17,7 @@ def uusi_postaus(request):
     if request.method == "POST":
         otsikko = request.POST['otsikko']
         teksti = request.POST['teksti']
-        postaus = Postaus.objects.create(otsikko = otsikko, teksti = teksti)            
+        postaus = Postaus.objects.create(otsikko = otsikko, teksti = teksti)
+        return redirect(reverse('nayta_postaus', args=(postaus.id)))            
+    
     return render(request, 'blogi/uusi_postaus.html')
