@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Blogi</title>
+    </head>
+    <body>
+        <h1>Blogi - Uusi postaus</h1>        
+        <a href="{% url 'postauslista' %}">Postaukset</a>
+        <form method="post">
+            {% csrf_token %}
+            <label>Otsikko</label>
+                <input name="otsikko"/>
+                <br>
+                    <label>Teksti</label>
+                    <textarea name = 'teksti'></textarea>                            
+            <button type="submit">Lähetä</button>
+        </form>
+    </body>
+</html>
