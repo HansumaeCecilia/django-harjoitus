@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Blogi</title>
+    </head>
+    <body>
+        <h1>Blogi - Postaukset</h1>
+        <ul>
+            {% for postaus in postaukset %}
+                <li><a href="/postaus/1">{{postaus}}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
