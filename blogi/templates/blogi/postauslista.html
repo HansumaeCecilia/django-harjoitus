@@ -5,8 +5,11 @@
     <body>
         <h1>Blogi - Postaukset</h1>
         <ul>
-            {% for postaus in postaukset %}
-                <li><a href="/postaus/1">{{postaus}}</a></li>
+            {% for postaus in postaukset %}                
+                <li>
+                    <a href="{% url 'nayta_postaus' postaus.id %}">
+                        {{postaus}}
+                </li>
             {% endfor %}
         </ul>
     </body>
