@@ -4,21 +4,20 @@
 <h1>Uusi postaus</h1>
 
 <form method="post">
-    {% csrf_token %}
+    {% csrf_token %}  
+    <div class = "row"></div>
+        <div class = "col-12 col-sm-10 col-md-8 col-lg-6">
+            <div class="form-floating mb-3">
+                <input class="form-control" id ="otsikko" name = "otsikko" placeholder="">
+                <label for="otsikko" class="form-label">Otsikko</label>                        
+            </div>
 
-    <div class="mb-3">
-        <label for="otsikko" class="form-label">Otsikko</label>
-        <input class="form-control" id="otsikko" name = "otsikko">        
-    </div>
-     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-     </div>
-     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-     </div>
-     <button type="submit" class="btn btn-primary">Lähetä</button>
-    
+            <div class="form-floating mb-3">
+                <textarea class = "form-control" id = "teksti" name = "teksti"
+                placeholder="" style="height: 10em"></textarea>
+                <label for="teksti" class="form-label">Teksti</label>                
+            </div>   
+        </div>      
+     <button type="submit" class="btn btn-primary">Lähetä</button>    
 </form>
 {% endblock %}
