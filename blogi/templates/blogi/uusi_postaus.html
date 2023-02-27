@@ -1,18 +1,24 @@
-<html>
-    <head>
-        <title>Blogi</title>
-    </head>
-    <body>
-        <h1>Blogi - Uusi postaus</h1>        
-        <a href="{% url 'postauslista' %}">Postaukset</a>
-        <form method="post">
-            {% csrf_token %}
-            <label>Otsikko</label>
-                <input name="otsikko"/>
-                <br>
-                    <label>Teksti</label>
-                    <textarea name = 'teksti'></textarea>                            
-            <button type="submit">Lähetä</button>
-        </form>
-    </body>
-</html>
+{% extends "blogi/base.html" %}
+
+{% block content %}
+<h1>Uusi postaus</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="otsikko" class="form-label">Otsikko</label>
+        <input class="form-control" id="otsikko" name = "otsikko">        
+    </div>
+     <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+     </div>
+     <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+     </div>
+     <button type="submit" class="btn btn-primary">Lähetä</button>
+    
+</form>
+{% endblock %}
