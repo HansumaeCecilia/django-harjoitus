@@ -40,7 +40,7 @@ Kun teet muutoksia models.py-tiedostoon, pitää model-muutokset saada myös tie
 python manage.py makemigrations
 ```
 
-# Muista myös ajaa migraatiotiedostot komennolla:
+## Muista myös ajaa migraatiotiedostot komennolla:
 ```sh
 python manage.py migrate
 ```
