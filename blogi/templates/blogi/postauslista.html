@@ -1,18 +1,22 @@
 {% extends "blogi/base.html" %}
+{% load static %}
 
 {% block content %}
 <h1>Postaukset</h1>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-xl-4">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2 g-xl-4">
     {% for postaus in postaukset %}
     <div class="col">
         <div class="card">
    
-            {% if postaus.kuva %}
             <a href="{% url 'nayta_postaus' postaus.id %}">
+                {% if postaus.kuva %}
                 <img src="{{postaus.kuva.url}}" class="card-img-top" alt="">
+                {% else %}
+                <img src="{% static '\blogi\No_image_available.svg' %}"
+                     class="card-img-top" alt="">
+                {% endif %}
             </a>
-            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{postaus.otsikko}}</h5>
                 <p class="card-text">{{postaus.luo_ingressi}}</p>
